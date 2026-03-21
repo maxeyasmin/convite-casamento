@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Convite - Yasmin & Max</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/jpeg" href="icone.jpg">
+</head>
+<body>
+
+<audio id="musica" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section class="hero">
+    <img src="foto-casal.jpg" alt="Foto do casal">
+    <div class="frase">
+        <h2>"O amor é a única coisa que cresce quando é compartilhado."</h2>
+    </div>
+</section>
+
+<section class="historia fade">
+    <h2>Nossa História</h2>
+    <p>
+        Tudo começou com um encontro inesperado na praia…
+        E desde então, descobrimos que o amor verdadeiro é construído nos detalhes,
+        nos dias simples e nos sonhos compartilhados.
+        Agora, convidamos você para celebrar conosco o início do nosso para sempre.
+    </p>
+</section>
+
+<!-- GALERIA INICIO
+<section class="galeria fade">
+    <h2>Galeria</h2>
+    <div class="grid">
+        <img src="galeria1.jpg">
+        <img src="galeria2.jpg">
+        <img src="galeria3.jpg">
+        <img src="galeria4.jpg">
+    </div>
+</section>
+GALERIA FIM -->
+
+
+<section class="detalhes fade">
+    <h2>Cerimônia Religiosa</h2>
+
+    <p><strong>Igreja:</strong> Paróquia dos Santos Reis</p>
+    <p><strong>Data:</strong> 09 de Maio de 2026</p>
+    <p><strong>Horário:</strong> Às 10h</p>
+
+    <a href="https://maps.app.goo.gl/G2jvT5FQN6MMMUhw6"
+       target="_blank"
+       class="btn-mapa">
+       Abrir localização
+    </a>
+</section>
+
+<section class="detalhes fade">
+    <h2>Recepção</h2>
+
+    <p><strong>Local:</strong> Aurora Eventos 2</p>
+    <p><strong>Data:</strong> 09 de Maio de 2026</p>
+    <p><strong>Horário:</strong> Às 11h</p>
+
+    <a href="https://maps.app.goo.gl/EuFEJczZdyZbkDqP6"
+       target="_blank"
+       class="btn-mapa">
+       Abrir localização da recepção
+    </a>
+</section>
+
+<section class="presentes fade">
+    <h2>Lista de Presentes</h2>
+
+    <p class="texto-presente">
+        Sua presença já é o nosso maior presente 💛<br><br>
+        Mas, se desejar nos presentear, criamos algumas sugestões:
+    </p>
+
+    <div class="lista-presentes">
+
+        <div class="item-presente">
+            <p class="nome-presente">Ajude em nosso casamento 👰</p>
+            <p class="valor-presente">R$ 50,00</p>
+            <button onclick="copiarPix(this)" class="btn-pix">Presentear</button>
+        </div>
+
+        <div class="item-presente">
+            <p class="nome-presente">Pix para o casal não entrar no Serasa 💸</p>
+            <p class="valor-presente">R$ 80,00</p>
+            <button onclick="copiarPix(this)" class="btn-pix">Presentear</button>
+        </div>
+
+        <div class="item-presente">
+            <p class="nome-presente">Amor a gente já tem… agora falta o Pix 💛</p>
+            <p class="valor-presente">R$ 30,00</p>
+            <button onclick="copiarPix(this)" class="btn-pix">Presentear</button>
+        </div>
+
+        <div class="item-presente">
+            <p class="nome-presente">Pix para evitar DR financeira 😂</p>
+            <p class="valor-presente">R$ 70,00</p>
+            <button onclick="copiarPix(this)" class="btn-pix">Presentear</button>
+        </div>
+
+        <div class="item-presente">
+            <p class="nome-presente">Ajude os noivos a pagarem os boletos 😂</p>
+            <p class="valor-presente">R$ 100,00</p>
+            <button onclick="copiarPix(this)" class="btn-pix">Presentear</button>
+        </div>
+
+        <div class="item-presente">
+            <p class="nome-presente">Um gesto de carinho para o nosso futuro juntos ✨</p>
+            <p class="valor-presente">R$ 40,00</p>
+            <button onclick="copiarPix(this)" class="btn-pix">Presentear</button>
+        </div>
+
+        <div class="item-presente">
+            <p class="nome-presente">Pix para o enxoval do futuro baby 😂</p>
+            <p class="valor-presente">R$ 60,00</p>
+            <button onclick="copiarPix(this)" class="btn-pix">Presentear</button>
+        </div>
+
+        <div class="item-presente">
+            <p class="nome-presente">Não irei, mas quero presentear 💸</p>
+            <p class="valor-presente">R$ 140,00</p>
+            <button onclick="copiarPix(this)" class="btn-pix">Presentear</button>
+        </div>
+
+        <div class="item-presente">
+            <p class="nome-presente">Ajude na lua de mel ✈️</p>
+            <p class="valor-presente">R$ 150,00</p>
+            <button onclick="copiarPix(this)" class="btn-pix">Presentear</button>
+        </div>
+
+        <div class="item-presente">
+            <p class="nome-presente">Um Pix, mil possibilidades 💫</p>
+            <p class="valor-presente">R$ 1.000,00</p>
+            <button onclick="copiarPix(this)" class="btn-pix">Presentear</button>
+        </div>
+
+    </div>
+
+    <p id="msgPix"></p>
+</section>
+
+<section class="contador fade">
+    <h2>Faltam</h2>
+    <div id="countdown"></div>
+    <p>para o nosso grande dia</p>
+</section>
+
+<section class="rsvp fade">
+    <h2>Confirme sua presença</h2>
+    <p>Até 20 de abril</p>
+    <input type="text" id="nome" placeholder="Digite seu nome completo">
+    <button onclick="confirmar()">Confirmar Presença</button>
+    <p id="mensagem"></p>
+</section>
+
+<footer>
+    <p>Com carinho,<br>Yasmin & Max</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
