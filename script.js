@@ -1,5 +1,7 @@
 // Fade ao rolar
 const faders = document.querySelectorAll('.fade');
+const audio = document.getElementById("musica");
+const btn = document.getElementById("btnAudio");
 
 window.addEventListener('scroll', () => {
     faders.forEach(el => {
@@ -47,8 +49,33 @@ function copiarPix(botao) {
     });
 }
 
-// clique no botão ativa o som
-btn.addEventListener("click", () => {
-    audio.play();
-    btn.style.display = "none";
+
+// tenta autoplay (Chrome vai tocar)
+window.addEventListener("load", () => {
+    const playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+        playPromise.catch(() => {
+            // Safari bloqueou → mostra botão
+            btn.style.display = "flex";
+        });
+    }
 });
+
+// força tocar no toque do usuário (Safari ama isso)
+const ativarAudio = () => {
+    audio.muted = false;
+    audio.currentTime = 0;
+
+    audio.play().then(() => {
+        btn.style.display = "none";
+    }).catch(err => {
+        console.log("Erro ao tocar:", err);
+    });
+
+    // remove o evento depois (evita bug)
+    document.removeEventListener("touchstart", ativarAudio);
+};
+
+btn.addEventListener("click", ativarAudio);
+document.addEventListener("touchstart", ativarAudio);
