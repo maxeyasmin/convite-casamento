@@ -46,3 +46,17 @@ function copiarPix(botao) {
         }, 2000);
     });
 }
+
+function entrar() {
+    const musica = document.getElementById("musica");
+
+    musica.play().then(() => {
+        // esconde capa
+        document.getElementById("capa").style.display = "none";
+
+        // mostra convite
+        document.getElementById("convite").style.display = "block";
+    }).catch(() => {
+        alert("Toque na tela para ativar a música 🎶");
+    });
+}
