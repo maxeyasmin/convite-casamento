@@ -50,32 +50,31 @@ function copiarPix(botao) {
 }
 
 
-// tenta autoplay (Chrome vai tocar)
+// tenta autoplay
 window.addEventListener("load", () => {
-    const playPromise = audio.play();
-
-    if (playPromise !== undefined) {
-        playPromise.catch(() => {
-            // Safari bloqueou → mostra botão
+    audio.play()
+        .then(() => {
+            // Tocou sozinho → garante que o botão fique escondido
+            btn.style.display = "none";
+        })
+        .catch(() => {
+            // Não tocou (Safari) → mostra botão
             btn.style.display = "flex";
         });
-    }
 });
 
-// força tocar no toque do usuário (Safari ama isso)
+// função para ativar áudio
 const ativarAudio = () => {
     audio.muted = false;
     audio.currentTime = 0;
 
     audio.play().then(() => {
         btn.style.display = "none";
-    }).catch(err => {
-        console.log("Erro ao tocar:", err);
     });
 
-    // remove o evento depois (evita bug)
     document.removeEventListener("touchstart", ativarAudio);
 };
 
+// eventos
 btn.addEventListener("click", ativarAudio);
 document.addEventListener("touchstart", ativarAudio);
