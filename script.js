@@ -46,3 +46,9 @@ function copiarPix(botao) {
         }, 2000);
     });
 }
+
+// clique no botão ativa o som
+btn.addEventListener("click", () => {
+    audio.play();
+    btn.style.display = "none";
+});
